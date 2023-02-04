@@ -1,0 +1,5 @@
+.root-container__header {
+  display: flex;
+  justify-content: center;
+  padding-top: 5%;
+}
