@@ -1,0 +1,31 @@
+.root-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 30%;
+  margin-left: 36%;
+}
+
+.root-container__button-back,
+.root-container__button-next,
+.root-container__button-favorites {
+  background-color: bisque;
+  font-size: 0.8rem;
+  border-color: tomato;
+  font-family: cursive;
+}
+
+.root-container__button-back,
+.root-container__button-next {
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+}
+
+/* .root-container__button-back {
+  margin-left: 35%;
+} */
+
+.root-container__button-favorites {
+  border-radius: 25%;
+}

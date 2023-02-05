@@ -9,27 +9,20 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
     if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 };
-var _App_header, _App_children;
-import Button from '../Button/Button.js';
+var _Button_text, _Button_buttonType;
 import Component from '../components/Component/component.js';
-import Header from '../Header/Header.js';
-export default class App extends Component {
-    constructor(parentElement) {
-        super(parentElement, 'div', 'root-container');
-        _App_header.set(this, void 0);
-        _App_children.set(this, void 0);
-        const parentOfHeader = document.querySelector('.root');
-        __classPrivateFieldSet(this, _App_header, new Header('./pokemon-logo.svg', parentOfHeader, 'header'), "f");
-        __classPrivateFieldSet(this, _App_children, [
-            new Button('Back', 'button', this.element, 'root-container__button-back'),
-            new Button('My Favorites', 'button', this.element, 'root-container__button-favorites'),
-            new Button('Next', 'button', this.element, 'root-container__button-next'),
-        ], "f");
+export default class Button extends Component {
+    constructor(text, buttonType, parentElement, classCss = '') {
+        super(parentElement, 'button', classCss);
+        _Button_text.set(this, void 0);
+        _Button_buttonType.set(this, void 0);
+        __classPrivateFieldSet(this, _Button_text, text, "f");
+        __classPrivateFieldSet(this, _Button_buttonType, buttonType, "f");
     }
     render() {
         super.render();
-        __classPrivateFieldGet(this, _App_header, "f").render();
-        __classPrivateFieldGet(this, _App_children, "f").forEach(items => items.render());
+        this.element.textContent = __classPrivateFieldGet(this, _Button_text, "f");
+        this.element.setAttribute('type', __classPrivateFieldGet(this, _Button_buttonType, "f"));
     }
 }
-_App_header = new WeakMap(), _App_children = new WeakMap();
+_Button_text = new WeakMap(), _Button_buttonType = new WeakMap();
