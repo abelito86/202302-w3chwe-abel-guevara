@@ -2,8 +2,7 @@
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  width: 30%;
-  margin-left: 36%;
+  width: 100%;
 }
 
 .root-container__button-back,
@@ -13,6 +12,14 @@
   font-size: 0.8rem;
   border-color: tomato;
   font-family: cursive;
+}
+
+.root-container__button-back {
+  margin-left: 30%;
+}
+
+.root-container__button-next {
+  margin-right: 25%;
 }
 
 .root-container__button-back,

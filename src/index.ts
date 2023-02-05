@@ -1,5 +1,7 @@
+import { getPokemonList } from './apicalled.js';
 import App from './App/App.js';
 
 const appContainer = document.querySelector('body') as HTMLElement;
-const app = new App(appContainer);
-app.render();
+getPokemonList(0).then(() => {
+  new App(appContainer).render();
+});

@@ -6,20 +6,20 @@ export const getPokemonList = (offset: number) =>
     fetch(`https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=20`)
       .then(response => response.json())
       .then(data => {
-        const dataResult: [] = data.result;
-        const pokeUrlList: string[] = [];
-        for (let i = 0; i < dataResult.length; i++) {
-          pokeUrlList.push(data.result[i].url);
+        const dataResults: [] = data.results;
+        const pokemonUrlList: string[] = [];
+        for (let i = 0; i < dataResults.length; i++) {
+          pokemonUrlList.push(data.results[i].url);
         }
 
-        const promisesUrl = pokeUrlList.map(url =>
+        const promisesForUrls = pokemonUrlList.map(url =>
           fetch(url)
             .then(response => response.json())
             .then(data => {
               pokemonList.push(data);
             }),
         );
-        Promise.all(promisesUrl)
+        Promise.all(promisesForUrls)
           .then(() => {
             pokemonList.sort((a, b) => a.id - b.id);
             resolve();
