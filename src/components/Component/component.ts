@@ -15,4 +15,8 @@ export default class Component {
   render() {
     this.#parentElement?.appendChild(this.element);
   }
+
+  registerClick(listener: () => void): void {
+    this.element.addEventListener('click', listener);
+  }
 }

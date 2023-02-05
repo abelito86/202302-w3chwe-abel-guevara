@@ -21,5 +21,8 @@ export default class Component {
         var _a;
         (_a = __classPrivateFieldGet(this, _Component_parentElement, "f")) === null || _a === void 0 ? void 0 : _a.appendChild(this.element);
     }
+    registerClick(listener) {
+        this.element.addEventListener('click', listener);
+    }
 }
 _Component_parentElement = new WeakMap();
