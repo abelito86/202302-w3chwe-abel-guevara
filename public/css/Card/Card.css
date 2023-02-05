@@ -1,0 +1,20 @@
+.card-list {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-around;
+}
+
+.card-list__elem {
+  display: flex;
+  height: 24%;
+  width: 19%;
+  justify-content: center;
+  font-family: fantasy;
+  border-color: antiquewhite;
+  border-style: solid;
+  background-color: wheat;
+}

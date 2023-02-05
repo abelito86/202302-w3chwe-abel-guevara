@@ -1,15 +1,21 @@
+import { pokemonList } from '../apicalled.js';
 import Button from '../Button/Button.js';
+import CardList from '../CardList/CardList.js';
 import Component from '../components/Component/component.js';
 import Header from '../Header/Header.js';
 
 export default class App extends Component {
-  #header: Header;
+  #headerComponent: Header;
   #children: Component[];
 
   constructor(parentElement: HTMLElement | null) {
     super(parentElement, 'div', 'root-container');
     const parentOfHeader = document.querySelector('.root') as HTMLElement;
-    this.#header = new Header('./pokemon-logo.svg', parentOfHeader, 'header');
+    this.#headerComponent = new Header(
+      './pokemon-logo.svg',
+      parentOfHeader,
+      'header',
+    );
     this.#children = [
       new Button('Back', 'button', this.element, 'root-container__button-back'),
       new Button(
@@ -19,12 +25,13 @@ export default class App extends Component {
         'root-container__button-favorites',
       ),
       new Button('Next', 'button', this.element, 'root-container__button-next'),
+      new CardList(this.element, pokemonList),
     ];
   }
 
   render(): void {
     super.render();
-    this.#header.render();
+    this.#headerComponent.render();
     this.#children.forEach(items => items.render());
   }
 }
